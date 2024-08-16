@@ -130,7 +130,7 @@ body, html {
                 font-size: 24px; /* Adjust the size to match the screenshot */
                 line-height: 1.6; /* Adjust line spacing for readability */
                 z-index: 10; /* Ensures that the text is above the p5 canvas */
-                background: rgba(221, 221, 221, 0.75);
+                background: rgba(221, 221, 221, 0.2);
                 padding: 20px;
             }
 
