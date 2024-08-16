@@ -275,11 +275,6 @@ body, html {
     font-size: 2em;
 }
 
-.about_first {
-    padding-bottom: 300px;
-    /* font-size: 2em; */
-}
-
 /* Fade animation */
 @keyframes fadeIn {
     from { opacity: 0; }
