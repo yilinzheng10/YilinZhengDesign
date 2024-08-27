@@ -1,5 +1,9 @@
 body, html {
+<<<<<<< HEAD
     font-family: 'Montserrat', sans-serif;
+=======
+    font-family: 'Montserrat';
+>>>>>>> f5dcdd7b0a1e8b4efde84bc7ae9583c503f11a47
     margin: 0;
     padding: 0;
     width: 100%;
@@ -130,7 +134,11 @@ body, html {
                 font-size: 24px; /* Adjust the size to match the screenshot */
                 line-height: 1.6; /* Adjust line spacing for readability */
                 z-index: 10; /* Ensures that the text is above the p5 canvas */
+<<<<<<< HEAD
                 background: rgba(221, 221, 221, 0.6);
+=======
+                background: rgba(221, 221, 221, 0.2);
+>>>>>>> f5dcdd7b0a1e8b4efde84bc7ae9583c503f11a47
                 padding: 20px;
             }
 
