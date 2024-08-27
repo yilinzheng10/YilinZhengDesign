@@ -1,5 +1,5 @@
 body, html {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -130,7 +130,7 @@ body, html {
                 font-size: 24px; /* Adjust the size to match the screenshot */
                 line-height: 1.6; /* Adjust line spacing for readability */
                 z-index: 10; /* Ensures that the text is above the p5 canvas */
-                background: rgba(221, 221, 221, 0.75);
+                background: rgba(221, 221, 221, 0.6);
                 padding: 20px;
             }
 
@@ -273,11 +273,6 @@ body, html {
 
 .property_first, .risk_first, .financial_first {
     font-size: 2em;
-}
-
-.about_first {
-    padding-bottom: 300px;
-    /* font-size: 2em; */
 }
 
 /* Fade animation */
