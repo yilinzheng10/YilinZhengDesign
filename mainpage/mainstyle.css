@@ -1,0 +1,11 @@
+body, html {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden; /* Hide vertical overflow on the main page */
+    transition: background 1.5s ease; /* Smooth transition for background change */
+    background-color: black;
+}
