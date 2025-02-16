@@ -221,3 +221,8 @@ a:hover {
 h4 {
     color: rgb(255, 77, 37);
 }
+
+p i {
+    margin-right: 5px; /* small space after the icon */
+    color: #333;       /* icon color */
+  }
