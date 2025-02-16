@@ -1,0 +1,223 @@
+/* General Styles */
+body, html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    transition: background 1.5s ease; /* Smooth transition for background change */
+}
+
+/* Links */
+a {
+    color: rgb(0, 0, 0); /* Make links orange */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    color: rgb(255, 77, 37); /* Slightly darker orange on hover */
+    text-decoration: dotted underline; /* Dotted underline on hover */
+}
+
+/* Navigation Menu */
+.nav-container {
+    list-style-type: none; /* Removes the default bullet points */
+    text-align: left;
+    position: fixed;
+    font-size: 13px;
+    font-weight: bold;
+    top: 10%; /*initial position of menu*/
+    left: 100px;
+    z-index: 1000; /* Ensures it stays above other elements */
+    opacity: 0.5; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Smooth transition for showing/hiding */
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 3px;
+    cursor: grab; /* Indicates the menu is draggable */
+}
+
+.nav-container.visible {
+    opacity: 1; /* Show when mouse is hovering */
+}
+
+.nav-container nav ul {
+    padding-left: 0; /* Removes default padding */
+}
+
+.nav-container nav ul li {
+    position: relative; /* Allows the pseudo-element to be positioned relative to the <li> */
+    list-style: none; /* Ensures no list style is applied */
+    margin-bottom: 3px; /* Space between list items */
+}
+
+.nav-container nav ul li a span {
+    display: inline-block; /* Necessary for the animation */
+    position: relative; /* Allows us to animate its position */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+    color: black;
+}
+
+.nav-container nav ul li a:hover span {
+    transform: translateY(0px); /* Move the text upwards on hover */
+    animation: scrollText 0.6s ease-in-out;
+}
+
+@keyframes scrollText {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+.nav-container nav ul li::before {
+    content: "";
+    position: absolute;
+    left: -15px; /* Adjust the position of the circle */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-container nav ul li:hover::before,
+.nav-container nav ul li.active::before {
+    width: 5px; /* Adjust the size of the bullet circle */
+    height: 5px;
+    background-color: darkolivegreen; /* Circle color */
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    flex-direction: row; /* Set to row for horizontal scrolling */
+    width: 100%;
+    height: 100%;
+    overflow-x: auto; /* Ensure the container can scroll horizontally */
+    overflow-y: hidden; /* Hide vertical overflow on the main container */
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+    scroll-snap-type: x mandatory; /* Smooth snap between sections */
+}
+
+.main-container > * {
+    flex: 0 0 100vw; /* Ensure each section takes full viewport width */
+    height: 100vh;
+    box-sizing: border-box; /* Ensure padding and border are included in the width and height */
+    display: flex;
+    flex-direction: column; /* Stack content vertically within each section */
+    align-items: center; /* Center content horizontally */
+}
+
+/* Content Container */
+.content-container {
+    width: 60%; /* 60% width with 20% margins on each side */
+    text-align: left; /* Align text to the left */
+    margin-top: 10%;
+}
+
+/* Each section should take full viewport width and allow vertical scrolling */
+.section {
+    flex: 0 0 100vw; /* Make each section take full width */
+    height: 100vh; /* Full height */
+    overflow-y: auto; /* Enable vertical scrolling inside sections */
+    overflow-x: hidden; /* Prevent unwanted horizontal scrolling */
+    scroll-snap-align: start; /* Ensure smooth horizontal snapping */
+    padding: 20px; /* Prevent content from touching edges */
+    box-sizing: border-box;
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 15px; /* Initially hidden */
+    width: 100%;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: right;
+    padding-bottom: 10px;
+    font-size: 10px;
+}
+
+/* Mouse-Following Circle */
+.mouse-circle {
+    position: absolute;
+    width: 20px; /* circle size */
+    height: 20px; /* circle size */
+    background-color: rgba(255, 165, 109, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.1s ease, background-color 0.3s ease; /* Smooth transition for color and size */
+    z-index: 1000;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.work-item {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+}
+
+.work-item img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.work-item h4 {
+    margin-top: 10px;
+}
+
+.work-item p {
+    color: #555;
+}
+
+.work-item:hover {
+    transform: scale(1.05);
+}
+
+.work-item:hover img {
+    transform: scale(1.02);
+}
+
+/* Parent container for the three columns */
+.resume-overview {
+    display: flex;
+    gap: 2rem; /* Space between columns */
+    margin-top: 2rem; /* Spacing above columns */
+}
+
+/* Each column */
+.resume-overview .column {
+    flex: 1;            /* Make columns equal width */
+    min-width: 200px;   /* Prevent columns from collapsing too small */
+}
+
+/* Headings for each column */
+.resume-overview .column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase; /* If you want it uppercase like the screenshot */
+}
+
+/* Individual items (job, school, honor, etc.) */
+.resume-overview .column .item {
+    margin-bottom: 1.5rem; /* Space between entries */
+    line-height: 1.4;
+}
+
+.resume-overview .column .item strong {
+    font-weight: 600; /* Slightly bolder title */
+}
+
+h4 {
+    color: rgb(255, 77, 37);
+}
