@@ -1,6 +1,6 @@
 /* General Styles */
 body, html {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: monospace;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -26,14 +26,16 @@ a:hover {
     position: fixed;
     font-size: 13px;
     font-weight: bold;
-    top: 10%; /*initial position of menu*/
-    left: 100px;
+    top: 15%; /*initial position of menu*/
+    left: 10%;
     z-index: 1000; /* Ensures it stays above other elements */
     opacity: 0.5; /* Initially hidden */
     transition: opacity 0.5s ease; /* Smooth transition for showing/hiding */
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
+    background-color: rgba(255, 242, 242, 0.483);
+    padding-left: 15px;
+    padding-right: 15px;
     border-radius: 3px;
+    border-style: dotted;
     cursor: grab; /* Indicates the menu is draggable */
 }
 
@@ -48,7 +50,7 @@ a:hover {
 .nav-container nav ul li {
     position: relative; /* Allows the pseudo-element to be positioned relative to the <li> */
     list-style: none; /* Ensures no list style is applied */
-    margin-bottom: 3px; /* Space between list items */
+    margin-bottom: 5px; /* Space between list items */
 }
 
 .nav-container nav ul li a span {
@@ -114,7 +116,12 @@ a:hover {
 .content-container {
     width: 60%; /* 60% width with 20% margins on each side */
     text-align: left; /* Align text to the left */
-    margin-top: 10%;
+    margin-top: 5%;
+}
+
+.content-container h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 /* Each section should take full viewport width and allow vertical scrolling */
@@ -126,17 +133,6 @@ a:hover {
     scroll-snap-align: start; /* Ensure smooth horizontal snapping */
     padding: 20px; /* Prevent content from touching edges */
     box-sizing: border-box;
-}
-
-/* Footer */
-.footer {
-    position: fixed;
-    bottom: 15px; /* Initially hidden */
-    width: 100%;
-    color: rgba(0, 0, 0, 0.5);
-    text-align: right;
-    padding-bottom: 10px;
-    font-size: 10px;
 }
 
 /* Mouse-Following Circle */
@@ -188,41 +184,120 @@ a:hover {
     transform: scale(1.02);
 }
 
-/* Parent container for the three columns */
-.resume-overview {
-    display: flex;
-    gap: 2rem; /* Space between columns */
-    margin-top: 2rem; /* Spacing above columns */
+.works-category h4 {
+    font-size: 15px;
+    margin-bottom: 20px;
 }
 
-/* Each column */
-.resume-overview .column {
-    flex: 1;            /* Make columns equal width */
-    min-width: 200px;   /* Prevent columns from collapsing too small */
+/* Resume Styles */
+.resume-section {
+    margin-bottom: 40px;
 }
 
-/* Headings for each column */
-.resume-overview .column h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase; /* If you want it uppercase like the screenshot */
+.resume-section h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-/* Individual items (job, school, honor, etc.) */
-.resume-overview .column .item {
-    margin-bottom: 1.5rem; /* Space between entries */
-    line-height: 1.4;
+.resume-item {
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 
-.resume-overview .column .item strong {
-    font-weight: 600; /* Slightly bolder title */
+.resume-list {
+    list-style: none;
+    padding: 0;
 }
 
-h4 {
-    color: rgb(255, 77, 37);
+.resume-list li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.resume-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: black;
+    font-size: 16px;
+}
+
+/* Link Styling */
+.resume-section a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+.resume-section a:hover {
+    color: #888;
+}
+
+h2 {
+    color: rgb(255, 77, 40
+    );
 }
 
 p i {
     margin-right: 5px; /* small space after the icon */
     color: #333;       /* icon color */
   }
+
+/* Contact Section */
+.contact-container {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    gap: 40px; /* Space between left and right */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 60px; /* Extra padding to avoid overlapping footer */
+    margin-top: 5%;
+}
+
+.contact-container p {
+    font-size: 12px;
+}
+
+/* Left Side (20%) */
+.contact-left {
+    flex: 0 0 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.contact-left img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Right Side (80%) */
+.contact-right {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Footer as a normal block element */
+.footer {
+    width: 100%;
+    text-align: right;
+    padding: 10px 20px;
+    font-size: 12px;
+    background: white; /* ensures it’s visible */
+    box-sizing: border-box;
+    /* Remove any absolute positioning */
+}
+
+b {
+    text-decoration: underline;
+}
+
+.resume-list ul {
+    list-style-type: none; /* Remove default list style */
+    padding-left: 0; /* Remove left padding */
+}

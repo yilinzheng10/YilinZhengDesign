@@ -37,25 +37,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Draggable Navigation Menu
     const draggableNav = document.getElementById('draggable-nav');
-    let isDragging = false;
-    let offsetX, offsetY;
-
-    draggableNav.addEventListener('mousedown', function (e) {
+    if (draggableNav) {
+        let isDragging = false;
+        let offsetX = 0, offsetY = 0;
+        draggableNav.addEventListener('mousedown', (e) => {
         isDragging = true;
         offsetX = e.clientX - draggableNav.getBoundingClientRect().left;
         offsetY = e.clientY - draggableNav.getBoundingClientRect().top;
-    });
-
-    document.addEventListener('mousemove', function (e) {
+        draggableNav.style.cursor = 'grabbing';
+        });
+        document.addEventListener('mousemove', (e) => {
         if (isDragging) {
-            draggableNav.style.left = `${e.clientX - offsetX}px`;
-            draggableNav.style.top = `${e.clientY - offsetY}px`;
+            draggableNav.style.left = (e.clientX - offsetX) + 'px';
+            draggableNav.style.top = (e.clientY - offsetY) + 'px';
         }
-    });
-
-    document.addEventListener('mouseup', function () {
+        });
+        document.addEventListener('mouseup', () => {
         isDragging = false;
-    });
+        draggableNav.style.cursor = 'grab';
+        });
+    }
 
     // Show footer when scrolled to the bottom
     window.addEventListener('scroll', function () {
