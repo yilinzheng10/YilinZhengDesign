@@ -31,7 +31,7 @@ a:hover {
     z-index: 1000; /* Ensures it stays above other elements */
     opacity: 0.5; /* Initially hidden */
     transition: opacity 0.5s ease; /* Smooth transition for showing/hiding */
-    background-color: rgba(255, 242, 242, 0.62);
+    background-color: rgba(255, 202, 202, 0.704);
     padding-left: 20px;
     padding-right: 15px;
     border-radius: 3px;
@@ -135,6 +135,12 @@ a:hover {
     box-sizing: border-box;
 }
 
+.text-highlight {
+    box-shadow: inset 0 20px 0 rgba(255, 165, 109, 0.5);
+    display: inline;
+    padding: 2px 0;
+}
+
 /* Mouse-Following Circle */
 .mouse-circle {
     position: absolute;
@@ -151,7 +157,7 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns */
     gap: 20px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .work-item {
@@ -190,9 +196,13 @@ a:hover {
     transform: scale(1.02);
 }
 
+.works-category {
+    margin-top: 40px;
+}
+
 .works-category h4 {
-    font-size: 15px;
-    margin-bottom: 20px;
+    font-size: 20px;
+    margin-bottom: 15px;
 }
 
 /* Resume Styles */
