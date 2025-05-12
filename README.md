@@ -1,2 +1,2 @@
-Yilin's portfolio
+Design portfolio
 developed by me :)
