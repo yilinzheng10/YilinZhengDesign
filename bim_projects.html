@@ -1,53 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Sample Narrative</title>
-    <style>
-        body {
-            font-family: monospace;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .container {
-            width: 60%;
-            margin: 20px auto;
-        }
-        .photo {
-            width: auto;
-            height: 100%;
-            margin: 10px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .description {
-            margin: 10px 0;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Re-thinking BIM</title>
+  <style>
+    body {
+      font-family: monospace;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background: #fcfaf6;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    .project-title {
+      font-size: 2.2rem;
+      color: #2d3a2e;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .role-highlight {
+      background: #ffe5b4;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      color: #a05a00;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .image-caption {
+      font-size: 0.98rem;
+      color: #888;
+      margin-top: 6px;
+      text-align: center;
+    }
+
+    .section-divider {
+      border-top: 2px solid #e6c7a6;
+      margin: 40px 0;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin-bottom: 24px;
+      margin-top: 0;
+      letter-spacing: 1px;
+      color: #2d3a2e;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 18px;
+      margin-top: 32px;
+      color: #3d4d3a;
+      border-bottom: 2px solid #e6c7a6;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+      margin-top: 24px;
+      color: #5a6d5a;
+    }
+
+    p, ul, li {
+      font-size: 1.08rem;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 18px;
+      text-align: left;
+    }
+
+    ul {
+      padding-left: 24px;
+      margin-bottom: 18px;
+    }
+
+    .photo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin: 20px 0 32px 0;
+    }
+
+    .photo img {
+        flex: 1 1 0;
+        min-width: 200px;
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+        cursor: pointer;
+    }
+    .photo img:hover {
+        transform: scale(1.03);
+        z-index: 2;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      height: 300px;
+      background-color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px dashed #aaa;
+      border-radius: 5px;
+    }
+
+    .description {
+      font-size: 14px;
+      color: #555;
+      margin-top: 50px;
+    }
+
+    .text-highlight {
+      box-shadow: inset 0 20px 0 rgba(255, 165, 109, 0.5);
+      display: inline;
+      padding: 2px 0;
+    }
+
+    /* Section Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s, transform 0.7s;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
+  <div class="container">
+    <section class="project-entry reveal" id="overview">
+      <h1 class="project-title">TERRACURVE TOWER</h1>
+      <span class="role-highlight">Role: Designer & BIM Specialist</span>
+      <p><strong>Location:</strong> New York, NY<br>
+      <strong>Team:</strong> Yilin Zheng, Manas Bhatia, Yuxi Dai<br>
+      <strong>Tools:</strong> Rhino, Grasshopper, Revit, ClimateStudio, Lumion, Adobe Suite</p>
+      <p><strong>Project Overview:</strong> Terracurve Tower is a visionary mixed-use high-rise that reimagines urban living and working in the heart of Manhattan. The design responds to post-pandemic needs by integrating flexible office spaces, vibrant retail, and a boutique hotel, all within a climate-responsive envelope.</p>
+      <div class="photo">
+        <img src="assets/project/BIM/overview1.png" alt="Terracurve Tower Overview">
+      </div>
+      <div class="image-caption">Overall massing and site integration of Terracurve Tower, responding to the urban context of Manhattan's NOMAD district.</div>
+      <div class="section-divider"></div>
 
-        <div class="description">Description for Photo 1</div>
-        <div class="photo"><img src="assets/project/BIM/BIM precedent.jpg"></div>
+      <h2 id="concept">Concept & Inspiration</h2>
+      <p>The project draws inspiration from the dynamic skyline of New York and the organic forms found in nature. The tower's facade is designed to maximize daylight, enhance views, and create a unique identity within the cityscape. Our concept was to create a building that not only stands out visually but also adapts to its environment, providing comfort and flexibility for its users.</p>
+      <div class="photo">
+        <img src="assets/project/BIM/Mixed-use building.jpg" alt="Site context">
+        <img src="assets/project/BIM/Mixed-use building (1).jpg" alt="Site context 2">
+      </div>
+      <div class="image-caption">Initial massing studies exploring site context and urban integration.</div>
+      <div class="photo">
+        <img src="assets/project/BIM/Mixed-use building (2).jpg" alt="Site context 3">
+      </div>
+      <div class="image-caption">Further refinement of the building form based on surrounding structures and view corridors.</div>
+      <div class="section-divider"></div>
 
-        <div class="photo">Photo 2</div>
-        <div class="description">Description for Photo 2</div>
+      <h2 id="process">Design Process</h2>
+      <h3>Site & Climate Analysis</h3>
+      <p>We conducted detailed sun and wind studies to optimize facade shading and reduce energy consumption. Using tools like Grasshopper, we explored multiple massing options and facade patterns. Climate analysis informed the orientation and shading strategies for optimal energy performance and occupant comfort.</p>
+      <div class="photo">
+        <img src="assets/project/BIM/BIM precedent.jpg" alt="Shadow analysis">
+      </div>
+      <div class="image-caption">Shadow and view analysis to ensure minimal impact on neighboring buildings and maximize views to the Empire State Building.</div>
+      <div class="photo">
+        <img src="assets/project/BIM/viewTarget.jpg" alt="View target">
+      </div>
+      <div class="image-caption">View target analysis focusing on key city landmarks.</div>
+      <div class="photo">
+        <img src="assets/project/BIM/BIM-climateanalysis.jpg" alt="Climate analysis">
+      </div>
+      <div class="image-caption">Sun exposure and wind analysis guided the building's orientation and facade articulation.</div>
+      <div class="photo">
+        <img src="assets/project/BIM/daylight_1.png" alt="Sun exposure analysis 1">
+        <img src="assets/project/BIM/daylight_2.png" alt="Sun exposure analysis 2">
+      </div>
+      <div class="image-caption">Parametric sun studies to optimize daylight and reduce glare for interior spaces.</div>
+      <div class="section-divider"></div>
 
-        <div class="photo">Photo 3</div>
-        <div class="description">Description for Photo 3</div>
+      <h2 id="facade">Facade & Form Finding</h2>
+      <p>The facade was developed through iterative parametric modeling. The use of Rhino.Inside allowed us to seamlessly translate complex Grasshopper geometries into a detailed Revit model.</p>
+      <div class="photo">
+        <img src="assets/project/BIM/Mixed-use building (4).jpg" alt="Facade">
+        <img src="assets/project/BIM/facade_gh.png" alt="Revit">
+      </div>
+      <p>The program stacking strategy for Terracurve Tower organizes the building's diverse functions vertically, optimizing both user experience and building efficiency. The lower levels accommodate retail, garden, and office spaces, while the upper levels are dedicated to hotel and residential uses. Mechanical (MEP) floors are strategically placed to support building systems. The elevator zoning, as shown in the table, ensures efficient vertical transportation by dividing the tower into zones served by different elevator sets.</p>
+      <div class="photo">
+        <img src="assets/project/BIM/stacking.png" alt="Form finding">
+        <img src="assets/project/BIM/stackingexcel.png" alt="Program and Elevator Zoning Table">    
+      </div>
+      <div class="image-caption">3D stacking diagram visually representing the program distribution and zoning within the tower. Different colors indicate distinct program types and mechanical floors. Table showing the vertical distribution of programs, floor elevations, and elevator zoning.</div>
+      <div class="photo">
+        <img src="assets/project/BIM/plan COMPOSITE SHEET.jpg" alt="Floor plan">  
+      </div>
 
-        <div class="photo">Photo 4</div>
-        <div class="description">Description for Photo 4</div>
+      <h2 id="outcome">Outcome</h2>
+      <div class="photo">
+        <img src="assets/project/BIM/MB_5 - Photo.jpg" alt="massing">
+      </div>
+      <div class="image-caption">Massing of the building in the site context.</div>
+      <div class="photo">
+        <img src="assets/project/BIM/revit_axon1.png" alt="axonometric view 1">  
+        <img src="assets/project/BIM/revit_axon2.png" alt="axonometric view 2">
+        <img src="assets/project/BIM/revit_axon3.png" alt="axonometric view 3">
+      </div>
+      <div class="image-caption">3D axonometric views of the building.</div>
+      <div class="photo">
+        <img src="assets/project/BIM/gen2_1734035580689-enhanced.png" alt="Rendering 4">
+        <img src="assets/project/BIM/gen2_1734035468522-enhanced.png" alt="Rendering 2">
+        <img src="assets/project/BIM/gen2_1734035564921-enhanced.png" alt="Rendering 3">
+      </div>
+      <div class="image-caption">Additional 3D renderings showcasing the tower's facade articulation and curves.</div>
+      <div class="photo">
+       
+        <img src="assets/project/BIM/gen2_1734033376477-enhanced.png" alt="Rendering 1">
+      </div>
+      <div class="image-caption">Perspective views highlighting the building's massing, materiality, and relationship to the surrounding cityscape.</div>
 
-        <div class="photo">Photo 5</div>
-        <div class="description">Description for Photo 5</div>
-    </div>
+    </section>
+  </div>
+  <script>
+  // Lightbox for Images
+  document.querySelectorAll('.photo img').forEach(img => {
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const modal = document.createElement('div');
+      modal.style.position = 'fixed';
+      modal.style.top = 0;
+      modal.style.left = 0;
+      modal.style.width = '100vw';
+      modal.style.height = '100vh';
+      modal.style.background = 'rgba(0,0,0,0.8)';
+      modal.style.display = 'flex';
+      modal.style.alignItems = 'center';
+      modal.style.justifyContent = 'center';
+      modal.style.zIndex = 1000;
+      modal.innerHTML = `<img src="${this.src}" style="max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,0.3);"><span style="position:absolute;top:30px;right:50px;font-size:2.5rem;color:#fff;cursor:pointer;">&times;</span>`;
+      modal.onclick = () => document.body.removeChild(modal);
+      document.body.appendChild(modal);
+    });
+  });
+
+  // Section Reveal Animation
+  function revealOnScroll() {
+    document.querySelectorAll('.reveal').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60) {
+        el.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('DOMContentLoaded', revealOnScroll);
+  </script>
 </body>
 </html>
