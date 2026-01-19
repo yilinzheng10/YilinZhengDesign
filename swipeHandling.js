@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentSection = 0;
 
     // Typing Effect
-    const typingText = "by no means anything technological";
+    const typingText = "Los Angeles";
     const typingElement = document.getElementById('typing');
     let index = 0;
     const typingSpeed = 100;
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(typeWriter, typingSpeed);
         } else {
             setTimeout(() => {
-                typingElement.textContent = "the essence of technology is ";
+                typingElement.textContent = "";
                 index = 0;
                 typeWriter();
             }, 2000);
