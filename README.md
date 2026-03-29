@@ -1,2 +1,2 @@
-Design portfolio
-developed by me :)
+Design portfolio sketch
+designed and developed by Yilin :)
