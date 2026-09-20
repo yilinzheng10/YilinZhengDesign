@@ -283,6 +283,17 @@ a:hover {
     line-height: 1.6;
 }
 
+.video-toggle {
+    align-self: flex-start;
+    font: inherit;
+    padding: 6px 12px;
+    border: 1px solid #777;
+    border-radius: 3px;
+    background: #fff;
+    color: #222;
+    cursor: pointer;
+}
+
 .resume-item p,
 .resume-intro p {
     max-width: 72ch;

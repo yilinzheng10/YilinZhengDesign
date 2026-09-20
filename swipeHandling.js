@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.video-toggle').forEach(button => {
+        const video = button.closest('.work-item').querySelector('video');
+        button.addEventListener('click', async () => {
+            if (!video.paused) { video.pause(); return; }
+            try {
+                video.muted = true;
+                await video.play();
+            } catch {
+                button.textContent = 'Retry video';
+            }
+        });
+        video.addEventListener('play', () => {
+            button.textContent = 'Pause video';
+            button.setAttribute('aria-label', 'Pause scaled model prototype video');
+        });
+        video.addEventListener('pause', () => {
+            button.textContent = 'Play video';
+            button.setAttribute('aria-label', 'Play scaled model prototype video');
+        });
+    });
     const sections = document.querySelectorAll('.section');
     const navItems = document.querySelectorAll('nav li a');
     const footer = document.querySelector('.footer');
