@@ -18,6 +18,16 @@ Editorial checklist for the six selected projects. This file is not linked from 
 - [x] Reorganize the résumé for computational design, design technology, AEC automation, spatial computing, and applied-AI roles.
 - [x] Remove role descriptions and the LinkedIn link from Experience; add confirmed leadership roles and recognition from LinkedIn.
 - [x] Rewrite the Works introduction for forward-deployed computational design and design engineering positioning.
+- [x] Add Washington Commanders New Stadium and Huntington Bank Field to Professional Work beside Standard Bots, using the existing card size.
+- [x] Replace the Washington Commanders and Cleveland Browns icons with official HKS stadium renderings.
+- [x] Add Seekr to Publications as an unlinked 2026 paper using the supplied proprioception image and citation.
+- [x] Rename Publications to Publication and Conference; add the linked SOLARA Facade Tectonics 2026 paper and session.
+- [x] Update the stadium tags to computational design, Grasshopper, Revit interoperability, and workflow automation.
+- [x] Replace the Scaled Model Prototype servo-control tag with Arduino.
+- [ ] Seekr: confirm final publication URL, DOI, and page details when available; keep the card unlinked until then.
+- [ ] Washington Commanders: confirm Yilin's exact contribution, tools, phase, and approved attribution.
+- [ ] Huntington Bank Field: confirm Yilin's exact contribution, tools, phase, and approved attribution.
+- [ ] Confirm that individual HKS project contributions can be discussed publicly before adding ownership language.
 - [ ] User review: hand-pick final text and cover media for each card.
 - [ ] Standard Bots: supply any team credits intended for publication.
 - [ ] Review Scraper: supply any team credits intended for publication.

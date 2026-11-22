@@ -31,7 +31,7 @@ a:hover {
     z-index: 1000; /* Ensures it stays above other elements */
     opacity: 0.5; /* Initially hidden */
     transition: opacity 0.5s ease; /* Smooth transition for showing/hiding */
-    background-color: rgba(255, 202, 202, 0.30);
+    background-color: rgba(255, 255, 255, 0.30);
     padding-left: 25px;
     padding-right: 15px;
     border-radius: 3px;
@@ -162,6 +162,18 @@ a:hover {
     margin-top: 20px;
 }
 
+.work-subheading {
+    display: block;
+    width: max-content;
+    margin: 22px 0 0;
+    padding: 5px 9px;
+    border: 1px dashed #777;
+    border-radius: 3px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
 .work-item {
     display: flex;
     flex-direction: column;
@@ -192,6 +204,13 @@ a:hover {
     box-sizing: border-box;
 }
 
+#publications .work-item img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
 .work-embed {
     min-width: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -212,6 +231,12 @@ a:hover {
 
 .work-item p {
     color: #555;
+}
+
+.work-item p br:last-of-type {
+    display: block;
+    content: "";
+    margin-bottom: 0.5em;
 }
 
 .work-item:hover {
@@ -254,7 +279,7 @@ a:hover {
     .works-grid {
       grid-template-columns: 1fr; /* Switch to 1 column on narrow screens */
     }
-  
+
     .work-item video,
     .work-item img {
       width: 100%; /* Ensure media scales down on small screens */
@@ -267,20 +292,46 @@ a:hover {
   }
 
 /* Resume Styles */
+#resume .content-container {
+    width: 78%;
+    max-width: 1240px;
+    padding-left: 72px;
+    box-sizing: border-box;
+}
+
 .resume-section {
-    margin-bottom: 40px;
+    margin-bottom: 48px;
 }
 
 .resume-section h3 {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin: 0 0 14px;
     text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
-.resume-item {
-    margin-bottom: 15px;
-    line-height: 1.6;
+.resume-table {
+    border-top: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.resume-row {
+    display: grid;
+    grid-template-columns: 190px minmax(230px, 1.35fr) minmax(280px, 2fr);
+    gap: 28px;
+    align-items: start;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    line-height: 1.45;
+}
+
+.resume-row strong {
+    font-weight: 600;
+}
+
+.resume-date {
+    color: #555;
+    font-variant-numeric: tabular-nums;
 }
 
 .video-toggle {
@@ -298,6 +349,23 @@ a:hover {
 .resume-intro p {
     max-width: 72ch;
     line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    #resume .content-container {
+        width: 80%;
+        padding-left: 0;
+    }
+
+    .resume-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 16px 0;
+    }
+
+    .resume-date {
+        font-size: 12px;
+    }
 }
 
 .resume-list ul {
